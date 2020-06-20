@@ -67,10 +67,16 @@ transformer_lm = Namespace(
 
 
 @pytest.mark.parametrize(
+<<<<<<< HEAD
     "model_class, args, ctc_weight, lm_nn, lm_args, lm_weight, ngram_weight, \
         bonus, device, dtype",
     [
         (nn, args, ctc, lm_nn, lm_args, lm, ngram, bonus, device, dtype)
+=======
+    "model_class, args, ctc_weight, lm_nn, lm_args, lm_weight, bonus, device, dtype",
+    [
+        (nn, args, ctc, lm_nn, lm_args, lm, bonus, device, dtype)
+>>>>>>> origin/master
         for device in ("cpu", "cuda")
         # (("rnn", rnn_args),)
         for nn, args in (("transformer", transformer_args),)
@@ -81,7 +87,10 @@ transformer_lm = Namespace(
             ("transformer", transformer_lm),
         )
         for lm in (0.0, 0.5)
+<<<<<<< HEAD
         for ngram in (0.0, 0.5)
+=======
+>>>>>>> origin/master
         for bonus in (0.0, 0.1)
         for dtype in ("float32", "float64")  # TODO(karita): float16
     ],
